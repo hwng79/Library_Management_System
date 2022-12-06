@@ -1,0 +1,67 @@
+select * from NewBook : xem ds sách
+select * from NewStudent : xem ds sinh viên
+
+
+////////// Thông tin đăng nhập ///////////
+create table loginTable(
+id int NOT NULL IDENTITY(1,1) primary key,
+username varchar(150) not null,
+pass varchar(150) not null
+)
+*note : tạo 1 bảng đăng nhập
+
+insert into loginTable(username,pass) values ('hongquan','nhom10');
+insert into loginTable(username,pass) values ('giahung','nhom10');
+insert into loginTable(username,pass) values ('giao vien','nhom10');
+*note : có thể đăng nhập bằng 3 tài khoản trên
+
+select * from loginTable
+*note : để xem danh sách đăng nhập hiện có
+
+////////// Tạo danh sách book ////////////
+create table NewBook1(
+bid int NOT NULL IDENTITY(1,1) primary key,
+bName varchar(250) not null,
+bAuthor varchar(250) not null,
+bPubl varchar(250) not null,
+bPDate varchar(250) not null,
+bPrice bigint not null,
+bQuan bigint not null
+);
+*note : tạo 1 bảng chứa danh sách book
+
+select * from NewBook1
+*note : để xem danh sách book
+
+///////// Tạo danh sách sinh viên //////////
+create table NewStudent1(
+stuid int NOT NULL IDENTITY (1,1) primary key,
+sname varchar(250) not null,
+sid varchar(250) not null,
+saddress varchar(250) not null,
+sem varchar(250) not null,
+contact bigint not null,
+email varchar(250) not null
+);
+*note : tạo bảng chứa danh sách sinh viên
+
+select * from NewStudent1
+*note : để xem danh sách sinh viên
+
+////////// Tạo danh sách tình trạng mượn or trả sách của sinh viên ////////////
+create table IBook2(
+id int NOT NULL IDENTITY(1,1) primary key,
+std_id varchar(250) not null,
+std_name varchar(250) not null,
+std_address varchar(250) not null,
+std_sem varchar(250) not null,
+std_contact big int not null,
+std_email varchar(250) not null,
+book_name varchar(250) not null,
+book_borrow_date varchar(250) not null,
+boo_return_date varchar(250),
+);
+*note : tạo bảng chứa danh sách trạng thái book của sinh viên
+
+select * from IBook2
+*note : xem trạng thái sách
